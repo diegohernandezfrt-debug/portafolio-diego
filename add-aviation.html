@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Aviation | Experiencia</title>
+  <link rel="icon" type="image/png" href="Imagenes/icono.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="fondo-aviacion">
+  <nav class="navbar">
+    <h1 class="nav-logo">Diego Francisco Hernández Ramírez</h1>
+    <ul>
+      <li><a href="index.html">🏠 Regresar al Portafolio</a></li>
+    </ul>
+  </nav>
+
+  <section class="fade-in">
+    <h2>Residencia Profesional – Add Aviation</h2>
+    <p>Durante mi estancia en <strong>ADD Aviation</strong>, participé en el proceso de 
+      <strong> documentación técnica</strong> de la aplicación web interna de la empresa, elaborando 
+      manuales de uso funcionales orientadas al personal administrativo.</p>
+
+      <p>Posteriormente, fui incorporado al equipo como <strong> colaborador administrativo</strong>, 
+        donde me encargué de realizar <strong> la captura y gestión de información</strong> a 
+        través del sistema web de la empresa, incluyendo el registro de 
+        <strong> fichas, bitácoras de mantenimiento y documentación del estado operativo de las aeronaves</strong>.</p>
+
+        <p>Esta experiencia me permitió fortalecer mis habilidades en 
+          <strong>gestión de datos, organización de procesos administrativos y documentación de sistemas 
+            tecnológicos</strong> 
+            dentro del sector aeronáutico.</p>
+
+  </section>
+
+  <!--
+    AGREGAR ALGO LLAMATIVO, OH una base de datos y una consulta de informacion
+  -->
+
+  <section class="ficha-proyecto fade-in">
+    <h2>Resumen del Proyecto</h2>
+    <div class="info-grid">
+      <div><strong>Empresa:</strong> Add Aviation</div>
+      <div><strong>Área:</strong> Documentación Técnica / Administración</div>
+      <div><strong>Duración:</strong> 6 meses</div>
+      <div><strong>Tecnologías:</strong> HTML, PHP, MySQL, Documentación Técnica</div>
+      <div><strong>Funciones principales:</strong></div>
+      <ul>
+        <li>Creación de manuales funcionales del sistema web.</li>
+        <li>Captura y control de bitácoras de mantenimiento.</li>
+        <li>Gestión de fichas e indexación documentos aeronáuticos.</li>
+        <li>Capacitación del personal administrativo.</li>
+      </ul>
+    </div>
+  </section>
+
+
+
+  <footer>
+    <p>&copy; 2025 Diego Hernández</p>
+  </footer>
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.3 };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+</body>
+</html>

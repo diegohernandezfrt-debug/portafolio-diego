@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bodega Noyola | Experiencia</title>
+  <link rel="icon" type="image/png" href="Imagenes/icono.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="fondo-noyola">
+  <nav class="navbar">
+    <h1 class="nav-logo">Diego Francisco Hernández Ramírez</h1>
+    <ul>
+      <li><a href="index.html">🏠 Regresar al Portafolio</a></li>
+    </ul>
+  </nav>
+
+  <section class="fade-in">
+    <h2>Comercializadora Santa Fé & Bodega Noyola.</h2>
+    
+    <p>Durante mi experiencia laboral en 
+      <strong>Supermercado Santa Fe</strong>, me desempeñé en el área de sistemas 
+      pero de igual forma apoyaba en soporte técnico, realizando diversas actividades 
+      relacionadas con la gestión y actualización de información del inventario. Entre 
+      mis principales funciones se encontraban la 
+      <strong>captura y actualización de precios, corrección de códigos de barras, 
+        configuración de básculas</strong> en el área de frutería, y 
+        <strong>soporte técnico a equipos de cómputo, impresoras y cajas registradoras</strong>.</p>
+
+        <p>Posteriormente, fui asignado como 
+          <strong>encargado del área de sistemas</strong> en la sucursal 
+          <strong>Bodega Noyola</strong>, donde además brindé apoyo en el 
+          <strong>área de mostrador</strong>, atendiendo llamadas, registrando 
+          pedidos y coordinando su entrega.</p>
+
+          <p>De forma proactiva, contribuí al 
+            <strong>mejoramiento visual del punto de venta</strong>, 
+            <strong>diseñando banners promocionales</strong> para resaltar productos y ofertas,
+             <strong>así como un logotipo representativo para Supermercado Santa Fe</strong>, 
+             aportando a la identidad visual de la marca.</p>
+
+             <p>Esta experiencia fortaleció mis habilidades en 
+               <strong>gestión técnica, atención al cliente, comunicación visual y trabajo 
+                 multidisciplinario</strong>, combinando aspectos administrativos, operativos 
+                 y de diseño.</p>
+
+  </section>
+
+  <!--
+    IMAGENES DE LOS DISEÑOS Y BANNERS QUE HICE 
+    de una fomra llamativa
+  -->
+
+<!-- 🖼️ Galería de imágenes con visor -->
+<section class="galeria fade-in">
+  <h2>Galería de Diseños y Gafetes</h2>
+  <div class="grid-galeria">
+    <img src="Imagenes/GafeteDel.png" alt="Proyecto 1">
+    <img src="Imagenes/GafeteDet.png" alt="Proyecto 2">
+    <img src="Imagenes/Logo1.png" alt="Proyecto 3">
+    <img src="Imagenes/logo2.png" alt="Proyecto 4">
+    <img src="Imagenes/Banner1.png" alt="Proyecto 5">
+    <img src="Imagenes/Banner2.png" alt="Proyecto 6">
+    <img src="Imagenes/Banner3.png" alt="Proyecto 7">
+    <img src="Imagenes/Banner4.png" alt="Proyecto 8">
+  </div>
+</section>
+
+<!-- 🪟 Lightbox (visor emergente) -->
+<div id="lightbox" class="lightbox">
+  <span class="cerrar">&times;</span>
+  <img class="lightbox-img" src="" alt="Imagen ampliada">
+</div>
+
+
+  <footer>
+    <p>&copy; 2025 Diego Hernández</p>
+  </footer>
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.3 };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+
+<script>
+  // Lightbox para ampliar imágenes
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.querySelector(".lightbox-img");
+  const cerrarBtn = document.querySelector(".cerrar");
+  const imagenes = document.querySelectorAll(".grid-galeria img");
+
+  imagenes.forEach(img => {
+    img.addEventListener("click", () => {
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+    });
+  });
+
+  cerrarBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+    }
+  });
+</script>
+
+
+</body>
+</html>
